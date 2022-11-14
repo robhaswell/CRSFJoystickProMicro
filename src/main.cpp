@@ -134,17 +134,15 @@ void packetChannels() {
 }
 
 void crsfLinkUp() {
-  led_on();
+  ledOn();
 }
 
 void crsfLinkDown() {
-  led_off();
+  ledOff();
 }
 
 void setup() {
-  Serial1.begin(115200);
-  boardSetup();
-  led_off();
+  ledOff();
 
   joystick.setXAxisRange(JOYSTICK_LOW, JOYSTICK_HIGH);
   joystick.setYAxisRange(JOYSTICK_LOW, JOYSTICK_HIGH);
@@ -156,9 +154,6 @@ void setup() {
   joystick.setRudderRange(JOYSTICK_LOW, JOYSTICK_HIGH);
 
   joystick.begin(false);  // Do not send updates automatically
-
-  // If something other than changing the baud of the UART needs to be done, do it here
-  // Serial1.end(); Serial1.begin(500000, SERIAL_8N1, 16, 17);
 
   // Attach the channels callback
   crsf.onPacketChannels = &packetChannels;
