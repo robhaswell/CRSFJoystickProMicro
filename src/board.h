@@ -1,3 +1,5 @@
+#define AVR_CRSF_BAUDRATE 250000
+
 void ledOff() {
   TXLED0;
 }

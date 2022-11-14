@@ -4,7 +4,7 @@
 
 #include "calibration.h"
 
-CrsfSerial crsf(Serial1, 250000);
+CrsfSerial crsf(Serial1, AVR_CRSF_BAUDRATE);
 
 int channel_data = 0;
 int map_data = 0;
